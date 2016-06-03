@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="magazin online de drujbe">
+    <meta name="author" content="Andrei Ionita">
+
+    <title>Idrujba.ro - Magazinul tau de drujbe</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand">Idrujba.ro</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/magazin.html">Magazin</a></li>
+                <li><a href="/admin.html">Centrul de comanda</a></li>
+                <li><a href="/info.html">Info</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/cos.html">Cos de cumparaturi</a></li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="#/inConstruction">Rapoarte <span class="sr-only">(current)</span></a></li>
+            <li><a href="#/users">Gestiune administratori</a></li>
+            <li><a href="#/list">Comenzi</a></li>
+            <li><a href="#/upload">Upload</a></li>
+            <li><a href="#/inConstruction">Help</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-md-10 main">
+          <h1 class="page-header">Centrul de comanda</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <a href="#/feature"><img src="images/marketing.jpg" class="img-responsive" alt="featurete placeholder"></a>
+              <h4>Stiri si anunturi</h4>
+              <span class="text-muted">Apasa aici pentru a modifica stirile</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <a href="#/products"><img src="images/product.jpg" class="img-responsive" alt="product placeholder"></a>
+              <h4>Produse</h4>
+              <span class="text-muted">Apasa aici pentru a edita sau adauga noi produse</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <a href='#/product'><img src="images/newOrder.jpg" class="img-responsive" alt="order placeholder"></a>
+              <h4>Comenzi</h4>
+              <span class="text-muted">Apasa aici pentru a verifica lista de comenzi</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <a href='#/metrics'><img src="images/metrics.jpg" class="img-responsive" alt="You should see gold here"></a>
+              <h4>Metrics</h4>
+              <span class="text-muted">Apasa aici pentru mai multe info legate de evolutie</span>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div ng-view></div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+      <!-- FOOTER -->
+      <footer>
+        <p>&copy; 2015 Idrujba.ro, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular-route.js"></script>
+    <script src="javascript/app.js"></script>
+    <script src="javascript/angular-file-upload.min.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<div class="container-fluid col-md-5 col-sm-5 col-lg-5 col-md-offset-2">
+	<div class="row">
+			<label for="clientName"> Nume client </label>
+			<input ng-model="order.clientName" type="text" id="clientName" class="form-control" placeholder="Nume client" name="clientName" ng-disabled="true"><br>
+
+			<label for="clientAdress"> Adresa </label>
+			<input ng-model="order.clientAdress" type="text" id="clientAdress" class="form-control" placeholder="Adresa dv" name="clientAdress" ng-disabled="true"><br>
+
+			<label for="clientCode"> Cod fiscal / CNP </label>
+			<input typ="text" ng-model="order.clientCode" id="clientCode" class="form-control" placeholder="Cod fiscal sau CNP" rows="5" name="clientCode" ng-disabled="true"><br>
+
+			<label for="product"> Produse </label>
+			<ul><li ng-repeat="item in order.product">{{item.product}}</li></ul><br>
+
+			<label for="price"> Pret </label>
+			<input ng-model="order.price" type="text" id="price" class="form-control" name="price" ng-disabled="true"><br>
+
+			<label for="comment"> Comentariu User </label>
+			<textarea ng-model="order.comment" id="comment" class="form-control" placeholder="Lasati un comentariu legat de comanda" rows="5" name="comment" ng-disabled="true"></textarea><br>
+
+			<label for="comment"> Comentariu Administrator </label>
+			<textarea ng-model="order.adminComment" id="comment" class="form-control" placeholder="Lasati un comentariu legat de comanda" rows="5" name="comment"></textarea><br>
+
+			<label for="price"> Status </label>
+			<input ng-model="order.status" type="text" id="price" class="form-control" name="price" ng-disabled="true"><br>
+
+			<button ng-click="updateOrder()" class="btn btn-success"> Actualizeaza comanda </button>
+			<button ng-click="refuseOrder()" class="btn btn-danger"> Refuza comanda </button>
+			<a href="/admin.html" class="btn btn-info"> Inapoi la centrul de comanda </a>
+
+	</div>
+
+</div>

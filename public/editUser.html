@@ -1,0 +1,25 @@
+<div class="container-fluid col-md-4 col-sm-4 col-lg-4">
+	<div class="row">
+		<form action="/api/addUser" method="post" enctype="multipart/form-data">
+			<label for="userName"> Nume administrator </label>
+			<input ng-model="user.name" type="text" id="userName" class="form-control" placeholder="Nume administrator" name="name" required autofocus><br>
+
+			<label for="pass"> Parola administrator </label>
+			<input ng-model="user.pass" type="password" id="pass" class="form-control" placeholder="Parola administrator" name="pass" required><br>
+
+			<label for="photo"> Poza </label><br>
+			<input type="file" id="photo" name="userPhoto"><br>
+
+			<input type="text" ng-model="user.photo" name="photo" style="display: none;"><br>
+			<input type="text" ng-model="user.key" name="key" style="display: none;"><br>
+
+			<label for="details"> Descriere </label>
+			<textarea ng-model="user.details" id="details" class="form-control" placeholder="Descriere detalaiata user" rows="5" name="details"></textarea><br>
+
+			<button type="submit" class="btn btn-success"> Adauga utilizator </button>
+			<a ng-click="deleteUser(user.key)" id="deleteUser" class="btn btn-danger"> Sterge utilizator </a>
+		</form>
+
+	</div>
+
+</div>

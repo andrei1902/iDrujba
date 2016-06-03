@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="cos cumparaturi Idrujba">
+    <meta name="author" content="Andrei Ionita">
+
+    <title>Idrujba.ro - Magazinul tau de drujbe</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body ng-controller="cosCtrl">
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Idrujba.ro</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/magazin.html">Magazin</a></li>
+                <li><a href="/login.html">Centrul de comanda</a></li>
+                <li><a href="/info.html">Info</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li class="active"><a href="/cos.html">Cos de cumparaturi</a></li>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </div>
+    </div>
+        
+<div class="container-fluid col-md-5 col-sm-5 col-lg-5 col-md-offset-2">
+	<div class="row">
+			<label for="clientName"> Nume client </label>
+			<input ng-model="order.clientName" type="text" id="clientName" class="form-control" placeholder="Nume client" name="clientName" required autofocus><br>
+
+			<label for="clientAdress"> Adresa </label>
+			<input ng-model="order.clientAdress" type="text" id="clientAdress" class="form-control" placeholder="Adresa dv" name="clientAdress" required><br>
+
+			<label for="clientCode"> Cod fiscal / CNP </label>
+			<input typ="text" ng-model="order.clientCode" id="clientCode" class="form-control" placeholder="Cod fiscal sau CNP" rows="5" name="clientCode" required><br>
+
+      <ul>
+        <li ng-repeat="item in preorder.products"> Produs: {{item.product}} Pret: {{item.price}}
+      </ul>
+
+
+
+
+      Pret total = {{order.price}}
+			<label for="comment"> Comentariu </label>
+			<textarea ng-model="order.comment" id="comment" class="form-control" placeholder="Lasati un comentariu legat de comanda" rows="5" name="comment" required></textarea><br>
+
+			<button ng-click="addOrder()" class="btn btn-success"> Adauga produs </button>
+			<a href="/magazin.html#/produse" class="btn btn-warning"> Inapoi la magazin </a>
+
+	</div>
+
+</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="/javascript/cos.js"></script>
+  </body>
+</html>

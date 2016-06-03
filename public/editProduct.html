@@ -1,0 +1,51 @@
+<div class="container-fluid col-md-4 col-sm-4 col-lg-4">
+	<div class="row">
+		<form action="/api/addProduct" method="post" enctype="multipart/form-data">
+			<label for="productName"> Nume produs </label>
+			<input ng-model="product.name" type="text" id="productName" class="form-control" placeholder="Nume produs" name="name" required autofocus><br>
+
+			<label for="manufacturer"> Nume producator </label>
+			<input ng-model="product.manufacturer" type="text" id="manufacturer" class="form-control" placeholder="Nume producator - )va rog sa scrieti textul in litere mari" name="manufacturer" required><br>
+
+			<label for="description"> Descriere </label>
+			<textarea ng-model="product.description" id="description" class="form-control" placeholder="Descriere detalaiata produs" rows="5" name="description" required></textarea><br>
+
+			<label for="power"> Motor </label><br>
+			<input ng-model="product.power" type="radio" name="power" value="batery"> Acumulator <br>
+			<input ng-model="product.power" type="radio" name="power" value="electric"> Electric <br>
+			<input ng-model="product.power" type="radio" name="power" value="gasoline"> Benzina <br><br>	
+
+			<label for="blade"> Lungime lama </label>
+			<select ng-model="product.blade" id="blade" name="blade" class="form-control"><br>
+				<option selected>-choose-</option>
+				<option>11cm - 35cm</option>
+				<option>35cm - 40cm</option>
+				<option>40cm - 50cm</option>
+				<option>50cm - 150cm</option>
+			</select>
+
+
+			<label for="weight"> Greutate </label>
+			<select ng-model="product.weight" id="weight" name="weight" class="form-control"><br>
+				<option selected>-choose-</option>
+				<option>2.1kg - 4.2kg</option>
+				<option>4.3kg - 4.7kg</option>
+				<option>4.8kg - 5.2kg</option>
+				<option>5.2kg - 5.9kg</option>
+				<option>6kg - 10.4kg</option>
+			</select>
+
+			<label for="price"> Pret </label>
+			<input ng-model="product.price" type="text" id="price" class="form-control" placeholder="Pret in RON" name="price" required><br>
+
+			<label for="photo"> Poza </label><br>
+			<input type="file" name="productPhoto"><br>
+			<input type="text" name="key" ng-model="product.key" style="display: none;"/>
+			<input type="text" ng-model="product.photo" name="photo" style="display: none;"><br>
+
+			<button type="submit" class="btn btn-success"> Modifica </button>
+			<a ng-click="deleteProduct(product.key)" id="addProduct" class="btn btn-danger"> Sterge produs </a>
+		</form>
+	</div>
+
+</div>

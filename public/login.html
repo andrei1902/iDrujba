@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="login page for Idrujba.ro administrator">
+    <meta name="author" content="Andrei Ionita">
+
+    <title>Admin Signin for Idrujba</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  </head>
+
+  <body ng-controller="loginControler">
+
+    <div class="container col-sm-3 col-md-3 col-sm-offset-3 col-md-offset-3" >
+
+      <form action="/api/login" method="post">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="form-control" placeholder="Admin name" name="inputName" required autofocus>
+        <input type="password" class="form-control" placeholder="Password" name="inputPassword" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me" name="remeberME"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+    <script src="javascript/login.js"></script>
+
+  </body>
+</html>

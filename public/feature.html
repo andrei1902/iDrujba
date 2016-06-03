@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<div class="container-fluid">
+	<div class="row">
+        <form action="/api/uploadFeature" method="post" enctype="multipart/form-data" class="col-sm-6 col-md-6 col-md-offset-3">
+    		<label for="featureTitle"> Titlul anuntului </label>
+    		<input ng-model="feature.featureTitle" type="text" id="featureTitle" class="form-control" placeholder="Feature Title" name="featureTitle" required autofocus>
+
+    		<label for="featureText"> Subtitlul anuntului </label>
+    		<input ng-model="feature.featureSubtitle" type="text" id="featureSubtitle" class="form-control" placeholder="Feature subtitle" name="featureSubtitle" required>
+
+    		<label for="featureText"> Sloganul anuntului </label>
+    		<input ng-model="feature.featureSlogan" type="text" id="featureSlogan" class="form-control" placeholder="Feature slogan" name="featureSlogan" required>
+
+    		<label for="featureText"> Textul </label>
+    		<textarea ng-model="feature.featureText" id="featureText" class="form-control" placeholder="Feature Text" name="featureText" rows="5" required></textarea>
+
+            <br>
+    		<label for="featureText"> Fotografia anuntului </label>
+    		<input type="file" nv-file-select uploader="uploader" name="featurePhoto"><br>
+            <input type="text" ng-model="feature.photo" name="photo" style="display: none;"><br>
+
+
+    		<input ng-model="feature.number" type="radio" name="number" value="1"> Stirea 1 <br>
+    		<input ng-model="feature.number" type="radio" name="number" value="2"> Stirea 2 <br>
+    		<input ng-model="feature.number" type="radio" name="number" value="3"> Stirea 3 <br>
+            <br>
+
+		  <button type="submit" id="uploadFile" class="btn btn-success"> Actualizeaza stirea </button>
+        </form>
+        <br>
+        <div class="row col-sm-8 col-md-8 col-md-offset-2">
+    		<table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Pozitia anuntului</th>
+                  <th>Titlul anuntului</th>
+                  <th>Editare stire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="feature in features track by $index">
+                    <td>{{feature.number}}</td>
+                    <td>{{feature.featureTitle}}</td>
+                    <td><button ng-click="editFeature(feature.number)" class="btn btn-success">Editeaza aceasta stire</button></td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+	</div>
+</div>

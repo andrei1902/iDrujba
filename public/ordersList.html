@@ -1,0 +1,32 @@
+<!doctype html>
+
+          <h2 class="sub-header">Orders list</h2>
+          <div class="table-responsive">
+            <table class="table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Client</th>
+                  <th>Adresa</th>
+                  <th>Produs</th>
+                  <th>Pret Total</th>
+                  <th>Data</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="order in orders track by $index">
+                    <td>{{$index + 1}}</td>
+                    <td>{{order.clientName}}</td>
+                    <td>{{order.clientAdress}}</td>
+                    <td><ul><li ng-repeat="item in order.product">{{item.product}}</li></ul></td>
+                    <td>{{order.price}}</td>
+                    <td>{{order.date|date:"medium"}}</td>
+                    <td>{{order.status}}</td>
+                    <td><a role="button" href="#/editOrder/{{$index}}" class="btn btn-warning">Update</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div></div>
+          </div>

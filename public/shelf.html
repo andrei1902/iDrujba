@@ -1,0 +1,71 @@
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+        	<h2>Filtre</h2>
+        	<a ng-click="noFilter()" class="btn btn-success">Arata-mi tot</a>
+
+        	<h3>Producatori</h3>
+          <ul class="nav nav-sidebar">
+            <li ng-repeat="item in manufacturers track by $index" ng-click="manFilter(item, $index)"><a class="{{manButtons[$index]}}">{{item}}</a></li>
+          </ul>
+          	<h3>Motor</h3>
+          <ul class="nav nav-sidebar">
+            <li ng-click="pwrFilter('Acumulator', 0)"><a class="{{engineButtons[0]}}">Acumulator</a></li>
+            <li ng-click="pwrFilter('Electric', 1)"><a class="{{engineButtons[1]}}">Electric</a></li>
+            <li ng-click="pwrFilter('gasoline', 2)"><a class="{{engineButtons[2]}}">Benzina</a></li>
+            <li ng-click="pwrFilter('', 3)"><a class="{{engineButtons[3]}}">Fara filtru</a></li>
+          </ul>
+          	<h3>Lungime lama</h3>
+          <ul class="nav nav-sidebar">
+            <li ng-click="bFilter('11cm - 35cm', 0)"><a class="{{bladeButtons[0]}}">11cm - 35cm</a></li>
+            <li ng-click="bFilter('35cm - 40cm', 1)"><a class="{{bladeButtons[1]}}">35cm - 40cm</a></li>
+            <li ng-click="bFilter('40cm - 50cm', 2)"><a class="{{bladeButtons[2]}}">40cm - 50cm</a></li>
+            <li ng-click="bFilter('50cm - 150cm', 3)"><a class="{{bladeButtons[3]}}">50cm - 150cm</a></li>
+            <li ng-click="bFilter('', 4)"><a class="{{bladeButtons[4]}}">Fara filtru</a></li>
+          </ul>
+          	<h3>Greutate</h3>
+          <ul class="nav nav-sidebar">
+            <li ng-click="wFilter('2.1kg - 4.2kg', 0)"><a class="{{weightButtons[0]}}">2.1kg - 4.2kg</a></li>
+            <li ng-click="wFilter('4.3kg - 4.7kg', 1)"><a class="{{weightButtons[1]}}">4.3kg - 4.7kg</a></li>
+            <li ng-click="wFilter('4.8kg - 5.2kg', 2)"><a class="{{weightButtons[2]}}">4.8kg - 5.2kg</a></li>
+            <li ng-click="wFilter('5.2kg - 5.9kg', 3)"><a class="{{weightButtons[3]}}">5.2kg - 5.9kg</a></li>
+            <li ng-click="wFilter('6kg - 10.4kg', 4)"><a class="{{weightButtons[4]}}">6kg - 10.4kg</a></li>
+            <li ng-click="wFilter('', 5)"><a class="{{weightButtons[5]}}">Fara filtru</a></li>
+          </ul>
+        </div>
+    <div class="col-sm-9 col-md-11 main">
+    		<h2>Filtre aplicate - {{query1}} {{query2}} {{query3}} {{query4}}</h2>
+			<div ng-animate="'animate'" ng-repeat="product in products | filter: query1 | filter: query2 | filter: query3 | filter: query4" class="bling col-sm-11 col-md-5 col-lg-5">
+				<div class="row">
+					<div class="col-sm-4 col-md-4">
+						<img src="/images/products/{{product.photo}}" alt="missing picture">
+					</div>
+					<div>
+						<h1>{{product.name}}</h1>
+						<h2 for="name">Producator: {{product.manufacturer}}</h2>
+						<p>{{product.description}}<p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3">
+						<p>Motor: {{product.power}}<p>
+						<p>Lungime lama: {{product.blade}}<p>
+						<p>Greutate: {{product.weight}}<p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3 col-md-3">
+						<!-- More crap to be inserted -->
+					</div>
+					<div class="col-sm-3 col-md-3">
+						<a ng-click="addToCart(product)" class="btn btn-lg btn-success">Adauga in cos</a>
+					</div>
+					<div class="col-sm-2 col-md-3 col-sm-offset-2 col-md-offset-2">
+						<p>Pret: {{product.price}}<p>
+					</div>
+				</div>
+				<div class="main">
+				</div>
+			</div>
+    </div>
+</div>
