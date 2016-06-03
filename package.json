@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/andrei1902/iDrujba/issues"
   },
-  "homepage": "https://github.com/andrei1902/iDrujba#readme"
+  "homepage": "https://github.com/andrei1902/iDrujba#readme",
+  "dependencies": {
+    "webpack": "^1.13.1"
+  }
 }
